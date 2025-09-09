@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar PWN",
+            "type": "shell",
+            "command": "./pawncc",
+            "args": [
+                "${file}",
+                "-D${fileDirname}",
+                "-i${workspaceFolder}/Modulos",
+                "-i${workspaceFolder}/pawno/includes",
+                "-d3"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/pawno",
+                "env": {
+                    "LD_LIBRARY_PATH": "${workspaceFolder}/pawno"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
